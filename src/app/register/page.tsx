@@ -4,11 +4,18 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import type { UserRole } from "../../lib/auth";
 
 export default function RegisterPage() {
   const { register } = useAuth();
   const router = useRouter();
-  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [form, setForm] = useState<{ username: string; email: string; password: string; role: UserRole; organization: string }>({
+    username: "",
+    email: "",
+    password: "",
+    role: "eleve",
+    organization: "",
+  });
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -41,6 +48,30 @@ export default function RegisterPage() {
             value={form.username}
             onChange={(event) => setForm((prev) => ({ ...prev, username: event.target.value }))}
             className="mt-1 w-full rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-white"
+          />
+        </label>
+        <label className="block text-sm">
+          <span>Ton rôle</span>
+          <select
+            value={form.role}
+            onChange={(event) => setForm((prev) => ({ ...prev, role: event.target.value as UserRole }))}
+            className="mt-1 w-full rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-white"
+          >
+            <option value="eleve">Élève / étudiant</option>
+            <option value="enseignant">Enseignant·e</option>
+            <option value="direction">Direction / chef d&rsquo;établissement</option>
+            <option value="collectivite">Collectivité / DSI</option>
+            <option value="partenaire">Partenaire / association</option>
+          </select>
+        </label>
+        <label className="block text-sm">
+          <span>Établissement / organisation</span>
+          <input
+            type="text"
+            value={form.organization}
+            onChange={(event) => setForm((prev) => ({ ...prev, organization: event.target.value }))}
+            className="mt-1 w-full rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-white"
+            placeholder="Lycée Carnot, Région Occitanie, etc."
           />
         </label>
         <label className="block text-sm">

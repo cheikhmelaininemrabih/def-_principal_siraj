@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
+import { fragmentRoleLabel } from "../lib/userMeta";
 
 export function AuthStatus() {
   const { user, status, logout } = useAuth();
@@ -30,7 +31,12 @@ export function AuthStatus() {
 
   return (
     <div className="flex items-center gap-3 text-sm text-white">
-      <span className="rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-wide">{user.username}</span>
+      <Link href="/compte" className="rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-wide hover:bg-white/20">
+        {user.username}
+      </Link>
+      <span className="rounded-full border border-white/20 px-3 py-1 text-[0.65rem] uppercase tracking-[0.4em] text-white/70 hidden md:inline-flex">
+        {fragmentRoleLabel(user.role)}
+      </span>
       <button
         onClick={() => {
           logout();

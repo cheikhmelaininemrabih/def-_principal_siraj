@@ -6,6 +6,8 @@ Application web narrative, interactive et libre qui illustre comment un établis
 - **Carte du Village Résistant animée** : parallax, cycle jour/nuit, PNJ pingouins/robots et 8 bâtiments cliquables (Studio + Observatoire inclus).
 - **NIRD Labs** : comic strip dynamique, city-builder, escape room, potion lab, film SVG, aventure narrative, impact visualizer, Linux Resurrection Machine.
 - **Quartier des Missions** : générateur de brief, radio pirate (vidéos/podcasts libres) et mur d’évidence pour amplifier la communauté.
+- **Interface dirigeants** : tableau de bord exécutif (calculateur financier + mémo Groq) pour convaincre directions/collectivités.
+- **Gestion des utilisateurs** : rôles (élève, enseignant, direction…) stockés localement, centre de contrôle `/compte`.
 - **Observatoire / Comparateur NIRD** : radar/bars, résumé narratif, suggestions d'actions, badge `Analyste NIRD`.
 - **Simulateurs avancés** : Big Tech Surveillance (cookies/pubs/trackers), Eco Simulator, Impact Visualizer, Linux Resurrection Machine.
 - **Progression locale & NIRD Score** : badges, modules complétés, idées communautaires et indicateurs (autonomie, vie privée, CO₂, inclusion, créativité) stockés dans `localStorage`.
@@ -25,6 +27,8 @@ Application web narrative, interactive et libre qui illustre comment un établis
 | Studio Résistant (Labs) | BD dynamique, city-builder, escape room, potion lab, film SVG, aventure narrative | Auteur BD, Architecte NIRD, Gaulois Libre, Maître Escape, Réalisateur NIRD... |
 | Quartier des Missions | Mission generator + Radio Résistance + Mur d’évidence | Stratège Résistant |
 | Observatoire NIRD | Comparateur d'établissements, graphiques, plan d’action personnalisé | Analyste NIRD |
+| Interface dirigeants | Calculateur budgétaire + mémo Groq | Stratège Exécutif |
+| Quartier des Missions | Mission generator + Radio Résistance + Mur d’évidence | Stratège Résistant |
 
 ## NIRD Labs (sélection)
 - **Dynamic Comic Strip Generator** : canvas + SVG libres, punchline personnalisée, export PNG, badges `Auteur BD Résistant` et `Explorateur du Studio`.
@@ -48,6 +52,15 @@ Application web narrative, interactive et libre qui illustre comment un établis
 - Générateur de missions thématiques (Linux, réemploi, privacy, labs…) qui attribue le badge `Stratège Résistant`.
 - Radio pirate : playlist d’articles, vidéos et podcasts issus de sources libres (France 3, France Inter, Café Pédagogique…) avec suivi local (`nird_media_progress`).
 - Mur d’évidence : liens clés vers la Forge, le site NIRD, les vidéos des élèves (utilisateur convainc son équipe en 2 clics).
+
+## Interface Dirigeants / Collectivités (`/executif`)
+- **Calculateur financier** : nombre de postes, licences, cloud, support, énergie → projection automatique des économies & CO₂ évité.
+- **Export AI (Groq)** : bouton “Générer le mémo stratégique” qui appelle Llama 3.1 (API Groq) pour produire une note d’intention prête à présenter.
+- **API `/api/budget`** : dédiée à cette analyse (format structuré + ton “Petit Gaulois CFO”).
+
+## Centre Utilisateur & Gestion locale (`/compte`)
+- Stockage local des comptes (sans backend) mais possibilité d’assigner des rôles : élève, enseignant, direction, collectivité, partenaire.
+- Mise à jour du profil (organisation, avatar) et affichage de la “task force” locale pour gérer qui pilote le village depuis ce navigateur.
 
 ## Architecture technique
 - **Framework** : Next.js 16 (App Router) + TypeScript

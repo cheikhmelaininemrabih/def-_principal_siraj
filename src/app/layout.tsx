@@ -38,6 +38,9 @@ export default function RootLayout({
                   <Link href="/observatoire" className="hover:text-white">
                     Observatoire
                   </Link>
+                  <Link href="/executif" className="hover:text-white">
+                    Interface dirigeants
+                  </Link>
                   <Link href="/missions" className="hover:text-white">
                     Missions
                   </Link>
