@@ -35,6 +35,12 @@ export default function RootLayout({
                   <Link href="/labs" className="hover:text-white">
                     Labs
                   </Link>
+                  <Link href="/observatoire" className="hover:text-white">
+                    Observatoire
+                  </Link>
+                  <Link href="/missions" className="hover:text-white">
+                    Missions
+                  </Link>
                     <Link href="/about-nird" className="hover:text-white">
                       Démarche NIRD
                     </Link>

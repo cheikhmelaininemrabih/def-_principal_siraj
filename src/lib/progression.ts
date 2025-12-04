@@ -1,5 +1,7 @@
 import type { ComponentType } from "react";
 import {
+  IconChecklist,
+  IconDeviceAnalytics,
   IconHammer,
   IconBooks,
   IconTerminal2,
@@ -156,6 +158,22 @@ export const BADGES: BadgeDefinition[] = [
     reward: "Projection publique au forum",
     color: "from-slate-200 via-cyan-400 to-blue-600",
     icon: IconMovie,
+  },
+  {
+    id: "observatoire",
+    title: "Analyste NIRD",
+    description: "Compare les établissements et identifie les leviers d'action.",
+    reward: "Accès à l'observatoire stratégique",
+    color: "from-cyan-200 via-blue-500 to-violet-600",
+    icon: IconDeviceAnalytics,
+  },
+  {
+    id: "mission",
+    title: "Stratège Résistant",
+    description: "Valide les missions et interviews du Village.",
+    reward: "Accès au quartier tactique",
+    color: "from-red-200 via-orange-400 to-yellow-500",
+    icon: IconChecklist,
   },
 ];
 

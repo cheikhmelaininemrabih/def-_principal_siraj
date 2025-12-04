@@ -12,6 +12,7 @@
   "dependencies": {
     "@tabler/icons-react": "^3.35.0",
     "framer-motion": "^12.23.25",
+    "jspdf": "^2.5.2",
     "nanoid": "^5.1.6",
     "next": "16.0.6",
     "openai": "^6.9.1",

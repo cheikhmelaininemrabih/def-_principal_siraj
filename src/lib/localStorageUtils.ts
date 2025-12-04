@@ -14,7 +14,9 @@ export type BadgeId =
   | "impact"
   | "adventure"
   | "potion"
-  | "movie";
+  | "movie"
+  | "observatoire"
+  | "mission";
 
 export type ProgressState = {
   badges: BadgeId[];

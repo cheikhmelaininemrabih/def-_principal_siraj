@@ -1,5 +1,7 @@
 import type { ComponentType } from "react";
 import {
+  IconChecklist,
+  IconDeviceAnalytics,
   IconHammer,
   IconBooks,
   IconTerminal2,
@@ -99,5 +101,27 @@ export const BUILDINGS: BuildingDefinition[] = [
     col: 2,
     accent: "from-cyan-200 to-indigo-500",
     icon: IconSparkles,
+  },
+  {
+    id: "observatoire",
+    title: "Observatoire NIRD",
+    summary: "Comparer les établissements et définir un plan d'action.",
+    path: "/observatoire",
+    intro: "Des analystes comparent les villages et partagent leurs tactiques.",
+    row: 1,
+    col: 1,
+    accent: "from-cyan-200 to-violet-500",
+    icon: IconDeviceAnalytics,
+  },
+  {
+    id: "mission",
+    title: "Quartier des Missions",
+    summary: "Briefings secrets, radio libre et mur d'évidence.",
+    path: "/missions",
+    intro: "Une radio pirate diffuse les témoignages des résistants.",
+    row: 3,
+    col: 3,
+    accent: "from-rose-200 to-amber-500",
+    icon: IconChecklist,
   },
 ];
